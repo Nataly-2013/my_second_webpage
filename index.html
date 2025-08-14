@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Fun Web Page</title>
+    <style>
+        body {
+            text-align: center;
+            background-color: lightblue;
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            color: darkblue;
+        }
+        button {
+            padding: 10px;
+            margin: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        img {
+            width: 250px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Welcome to My Fun Page!</h1>
+    <p id="datetime"></p>
+
+    <button onclick="changeBackground()">Change Background Color</button>
+    <br>
+    <img id="myImage" src="https://placekitten.com/300/200" alt="Cute Image">
+    <br>
+    <button onclick="changeImage()">Change Image</button>
+
+    <script>
+        // Show current date and time
+        document.getElementById("datetime").innerHTML = new Date().toLocaleString();
+
+        // Change background color
+        function changeBackground() {
+            const colors = ["lightblue", "lightgreen", "pink", "yellow", "lightcoral", "lavender"];
+            document.body.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+        }
+
+        // Change image
+        function changeImage() {
+            const images = [
+                "https://placekitten.com/300/200",
+                "https://placebear.com/300/200",
+                "https://placekitten.com/301/200",
+                "https://placebear.com/301/200"
+            ];
+            document.getElementById("myImage").src = images[Math.floor(Math.random() * images.length)];
+        }
+    </script>
+
+</body>
+</html>
